@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtltrays6o4jl"]
+
+[ext_resource type="PackedScene" uid="uid://cqboh8viuowx3" path="res://road.tscn" id="1_81vq4"]
+[ext_resource type="PackedScene" uid="uid://dwlwlq3ro30w4" path="res://arcade___free_racing_car.tscn" id="2_prpl8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_65pvq"]
+sky_top_color = Color(0.501961, 0.576471, 0.67451, 1)
+sky_horizon_color = Color(0.427451, 0.678431, 0.898039, 1)
+
+[sub_resource type="Sky" id="Sky_y5oka"]
+sky_material = SubResource("ProceduralSkyMaterial_65pvq")
+
+[sub_resource type="Environment" id="Environment_xbpr5"]
+background_mode = 2
+sky = SubResource("Sky_y5oka")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Road" parent="." instance=ExtResource("1_81vq4")]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="ARCADE - FREE Racing Car" parent="." instance=ExtResource("2_prpl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6232, 4.89869, -10.7596)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.622597, -0.125936, 0.772343, -2.65027e-09, 0.986966, 0.160932, -0.782543, -0.100196, 0.614481, -14.6302, 3.16701, 10.6804)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xbpr5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.996115, 4.8451e-10, 0.0880598, 0.029366, 0.942758, 0.332182, -0.0830191, 0.333478, -0.939096, 0, 6.31775, -7.72115)
